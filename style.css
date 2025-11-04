@@ -358,6 +358,38 @@ header, main, .hero, .container {
   visibility: visible !important;
   transition: none !important;
 }
+@media (max-width: 768px) {
+  .road-wrap {
+    display: none; /* hide the SVG */
+  }
+
+  .nodes {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .node {
+    position: static;
+    transform: none;
+    width: 90%;
+  }
+
+  .node-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .card {
+    position: static;
+    opacity: 1;
+    transform: none;
+    margin-top: 10px;
+    width: 100%;
+  }
+}
 
 
 /* FORCE NAV ALWAYS ON TOP — add to bottom of style.css */
