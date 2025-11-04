@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Utkarsh — Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#career" class="nav-link">Career</a></li>
+        <li><a href="#projects" class="nav-link">CAD Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header id="home" class="hero">
+    <div class="container hero-inner">
+      <div class="photo-wrap">
+        <img src="images/Utkarsh_pic.jpg" alt="Your photo" class="photo">
+      </div>
+      <div class="intro">
+        <h1>Utkarsh</h1>
+        <p class="tag"> Mechanical Engineer · CAD &amp; FEA Simulation</p>
+        <p class="lead">My passion for CAD design began when I was an automotive engineer 
+          working on Formula Student projects. It wasn't just about building vehicles that 
+          ran — it was about creating designs that won on an international stage. Through 
+          countless hours of modeling, refining, and troubleshooting, I realized that CAD 
+          design is far more than drawing parts; it's about thinking holistically, from assembly 
+          and cost efficiency to material selection, manufacturability, and how every component 
+          interacts in the real world. Each design decision feels like solving a puzzle that 
+          blends engineering precision with creativity. What excites me most is how CAD challenges 
+          me to innovate, to turn ideas into something tangible, elegant, and functional. It allows me
+          to work on something that not only works but makes sense in every dimension.</p>
+        <div class="actions">
+          <a class="btn primary" href="Utkarsh_CV.pdf" download>Download CV</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/utkarsh-pandey196/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- CAREER -->
+    <section id="career" class="section">
+      <div class="container">
+        <h2 class="section-title">Career Journey</h2>
+        <div id="career-path" class="relative w-full h-[300px] mt-10">
+          <!-- SVG path -->
+          <svg viewBox="0 0 1200 300" class="road-svg">            
+            <path d="M 40 100 C 240 0, 440 360, 640 110 C 840 -20, 1040 380, 1160 110"
+                  fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="12" stroke-linecap="round"/>
+            <path d="M 40 100 C 240 0, 440 360, 640 110 C 840 -20, 1040 380, 1160 110"
+                  fill="none" stroke="#2f7bff" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+
+
+          <!-- Node overlays (absolute, positioned by left/top to match path visually) -->
+          <div class="nodes">
+            <!-- Node 1 -->
+            <div class="node" style="left:9%; top:70%;" data-side="below">
+              <img src="images/Manipal.png" alt="Manipal" class="node-img">
+              <div class="card">
+                <h4>B.Tech — Mechanical Engineering</h4>
+                <div class="muted">Manipal Institute of Technology · 2014–2018</div>
+                <p>Simulation, design and optimization of vehicle dynamics for a Formula Student race car.</p>
+              </div>
+            </div>
+
+            <!-- Node 2 -->
+            <div class="node" style="left:35.5%; top:90%;" data-side="below">
+              <img src="images/Cranfield.png" alt="Cranfield" class="node-img">
+              <div class="card">
+                <h4>M.Sc. — Automotive Engineering</h4>
+                <div class="muted">Cranfield University · 2019–2020</div>
+                <p>Master thesis: Reduced tyre modelling for vehicle dynamics control.</p>
+                <p>Group Project: Zero Emmision Ambulance for healthcare department of UK.</p>
+              </div>
+            </div>
+
+            <!-- Node 3 -->
+            <div class="node" style="left:57.5%; top:70%;" data-side="below">
+              <img src="images/Lycan.png" alt="Lycan" class="node-img">
+              <div class="card">
+                <h4>Lead Mechanical Engineer</h4>
+                <div class="muted">Lycan Automotive · 2020–2022</div>
+                <p>Full-vehicle suspension design, Stanley controller work and ICE→BEV conversion.</p>
+              </div>
+            </div>
+
+            <!-- Node 4 -->
+            <div class="node" style="left:81%; top:73%;" data-side="below">
+              <img src="images/Akkodis.png" alt="Akkodis" class="node-img">
+              <div class="card">
+                <h4>Automotive Engineer</h4>
+                <div class="muted">Akkodis India · 2022–2023</div>
+                <p>Multi-body dynamics occupant simulation, functional safety and preprocessing for crash simulations.</p>
+              </div>
+            </div>
+
+            <!-- Node 5 -->
+            <div class="node" style="left:103%; top:66%;" data-side="below">
+              <img src="images/TUe.png" alt="TUe" class="node-img">
+              <div class="card">
+                <h4>Engineering Doctorate - Automotive System Design</h4>
+                <div class="muted">TU Eindhoven · 2023–2025</div>
+                <p>ADAS Skibox for data collection, image-processing pipelines and vehicle localization work.</p>
+              </div>
+            </div>
+          </div> <!-- .nodes -->
+        </div> <!-- .road-wrap -->
+
+      </div> <!-- .container -->
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">CAD Projects</h2>
+
+
+        <!-- Project 1 -->
+        <article class="project">
+        <h3>Project 1 — Formula Manipal (FSAE)</h3>
+        <p class="project-desc">
+            Formula Manipal is Manipal University's official Formula Student Racing Team (FSAE). Members
+            are students of Manipal Institute of Technology, who conceptualize, design, fabricate, 
+            test, and race a single seater formula style car. I led the team as Technical Lead at 
+            Formula Bharat competition, where we achieved 1st place in the Acceleration Event, 1st in Business
+             Presentation, and an overall 3rd position among national teams. Below are a few samples of my work 
+             during this project.
+
+        <div class="gallery">
+            <!-- Image 1 -->
+            <figure class="thumb">
+            <img src="images/Rear_bulkhead.png" alt="Rear bulkhead design">
+            <div class="caption-long">
+                <h4>Rear Bulkhead Design</h4>
+                <p>This model illustrates the rear bulkhead of a Formula student vehicle designed to house
+                the transmission and rear suspension assembly. The structure was bolted into the chassis/frame
+                of the vehicle.</p>
+                <p>Material: Aluminium 7075-T6 | Weight: 1.9 kg | Manufacturing method: 3 axis VMC</p>
+            </div>
+            </figure>
+
+            <!-- Image 2 -->
+            <figure class="thumb">
+            <img src="images/chassis.png" alt="FSAE Chassis">
+            <div class="caption-long">
+                <h4>Space frame chassis</h4>
+                <p>The model illustrates the space frame chassis of our Formula student vehicle.</p>
+                <p>Material:AISI 4130  | Weight: 27.8 kg | Manufacturing method: TIG Welding</p>
+            </div>
+            </figure>
+
+            <!-- Image 3 -->
+            <figure class="thumb">
+            <img src="images/Fixture.png" alt="Chassis Fixture">
+            <div class="caption-long">
+                <h4>Fixture design for Chassis</h4>
+                <p>The model shows the design of fixture for the welding of the spaceframe chassis. 
+                    Dimensional analysis indicated a deviation of only 2.3 mm from the intended design geometry.</p>
+            </div>
+            </figure>
+
+            <!-- Image 4 -->
+            <figure class="thumb">
+            <img src="images/X8_Front Suspension.jpg" alt="Suspension Assembly">
+            <div class="caption-long">
+                <h4>Front suspension Assembly</h4>
+                <p>The CAD model depicts the front suspension assembly designed for a FSAE car.
+                    The design consisted of pull rod suspension with aluminium anti-roll bar. The 
+                    anti-roll bar could be manually adjusted based on the track requirements.
+                </p>
+            </div>
+            </figure>
+        </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project">
+        <h3>Project 2 — Streetlive: A data collection toolbox for ADAS (in collaboration with TNO)</h3>
+        <p class="project-desc">
+            A multi-sensor data acquisition system to support data driven testing and validation of Advanced Driver
+            Assistance Systems (ADAS). The system, named StreetLive,
+            integrates a ZED 2 stereo camera, two radars, and an Inertial Measurement Unit (IMU) within a skibox mounted
+            on a test vehicle. A Jetson AGX Xavier processes sensor
+            data in real time using ROS 2 middleware, enabling synchronized recording and timestamp alignment through GNSS-
+            based time correction. Some of the main components of the system are shown below.
+            
+        </p>
+
+        <div class="gallery">
+            <!-- Image 1 -->
+            <figure class="thumb">
+            <img src="images/Skibox_CAD.jpg" alt="Rear bulkhead CAD render">
+            <div class="caption-long">
+                <h4>Skibox Assembly</h4>
+                <p>This model illustrates the assembled design of a data collection toolbox for ADAS testing.
+                   The box consisted of Radars, Camera, IMU and GPS. The box can be mounted on different vehicle
+                   and can be calibrated easily.</p>
+                
+            </figure>
+
+            <!-- Image 2 -->
+            <figure class="thumb">
+            <img src="images/ZED_mount.png" alt="Front enclosure CAD">
+            <div class="caption-long">
+                <h4>Camera Mount</h4>
+                <p>The camera housing showing the 3 piece mount used to protect the stereo
+                    camera from rain and debris. The housing consisted of two 3D printed parts 
+                    and 1 transparent plexiglass.</p>
+                    
+            </div>
+            </figure>
+
+            <!-- Image 3 -->
+            <figure class="thumb">
+            <img src="images/Radar_mount.png" alt="Exploded view">
+            <div class="caption-long">
+                <h4>Radar mount</h4>
+                <p>This model represents the 3D-printed mount designed for the radar sensors used 
+                  in the project. To minimize signal interference while maintaining structural 
+                  rigidity, the mount was fabricated from PLA, a non-reflective and lightweight 
+                  material effective in reducing sensor noise.
+                </p>
+            </div>
+            </figure>
+
+            <!-- Image 4 -->
+            <figure class="thumb">
+            <img src="images/Mobileye.jpg" alt="Validation setup">
+            <div class="caption-long">
+                <h4>Mobileye mount</h4>
+                <p>The image shows the assembly of the Mobileye 550 object detection camera, 
+                  comprising three main components: the sensor unit, a 3D-printed mount, and 
+                  a laser-cut plexiglass cover. The mount securely attached the system to the 
+                  skibox, while the plexiglass cover provided protection against rain and debris.
+                </p>
+            </div>
+            </figure>
+        </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project">
+        <h3>Project 3 — Zero Emmision Ambulance</h3>
+        <p class="project-desc">
+            The project focused on designing a zero-emission, double-crewed ambulance 
+            for the UK National Health Service (NHS). Two innovative concepts were 
+            developed to provide operational flexibility while ensuring lightweight 
+            construction, extended range, passenger comfort, and a low-floor design. 
+            The solution emphasized sustainability, cost efficiency, and practicality 
+            for deployment in urban environments such as London. My contribution to the project
+            involved the design and development of the suspension system. This optimized
+            ride comfort, handling, and overall driving performance of the vehicle. A couple of 
+            my work samples have been presented here.
+        </p>
+
+        <div class="gallery">
+            <!-- Image 1 -->
+            <figure class="thumb">
+            <img src="images/Rear_suspension.jpg" alt="Rear bulkhead CAD render">
+            <div class="caption-long">
+                <h4>Rear Suspension </h4>
+                <p>This model illustrates the rear suspension of the ambulance designed to provide
+                  comfort to the occupants.The rear suspension had a double wishbone design with air springs. The components were designed to be compatible with casting process and thereby
+                  facilitating mass production of the components.
+                </p>
+                
+            </div>
+            </figure>
+
+            <!-- Image 2 -->
+            <figure class="thumb">
+            <img src="images/Front_suspension.jpg" alt="Front enclosure CAD">
+            <div class="caption-long">
+                <h4>Front Suspension </h4>
+                <p>The model shows the front suspension of the ambulance. The front suspension was designed with a Mcphearson strut 
+                  and air springs.The steering system of the ambulance was equipped with Electro-Hydraulic power assisted rack and pinion mechanism. 
+                </p>
+            </div>
+            </figure>
+
+        </div>
+        </article>
+
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container contact">
+        <h2 class="section-title">Contact</h2>
+        <p class="muted">24pandey.utkarsh@gmail.com · +31 6 16911710 · Eindhoven, Netherlands</p>
+        <p><a class="link" href="https://www.linkedin.com/in/utkarsh-pandey196/" target="_blank">/in/utkarsh-pandey196</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 2025 Utkarsh</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,378 @@
+/* Base colors */
+:root{
+  --bg-0: #0b0f14;
+  --panel: #0f151b;
+  --muted: #9aa6b3;
+  --text: #e6eef6;
+  --accent: #2f7bff;
+}
+
+/* Reset / layout */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg,var(--bg-0),#080a0c);
+  color:var(--text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Containers */
+.container{max-width:1100px;margin:0 auto;padding:0 18px}
+
+/* NAV */
+/*
+.nav{position:fixed;left:0;right:0;top:0;background:rgba(8,10,12,0.7);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03);z-index:60}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
+.brand{font-weight:700;letter-spacing:1px;color:var(--text)}
+.nav-links{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+.nav-links a{color:var(--muted);text-decoration:none;padding:6px 8px;border-radius:8px}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,0.02)}
+*/
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(8,10,12,0.8);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  z-index: 9999;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 18px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #9aa6b3;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color .2s;
+}
+
+.nav-link:hover {
+  color: #e6eef6;
+}
+
+.nav-link.active {
+  color: #2f7bff;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: #2f7bff;
+  border-radius: 2px;
+}
+
+body {
+  margin: 0;
+  padding-top: 70px; /* same or slightly larger than nav height */
+}
+
+/* HERO */
+.hero{padding:90px 0 36px}
+.hero-inner{display:flex;gap:28px;align-items:center}
+
+.intro h1{margin:0;font-size:28px}
+.tag{color:var(--accent);margin-top:6px;font-weight:600}
+.lead{color:var(--muted);margin-top:12px;max-width:680px}
+.actions{margin-top:14px}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+.btn.primary{background:var(--accent);color:white}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text)}
+
+/* Section titles */
+.section{padding:48px 0}
+.section-title{font-size:20px;margin:0 0 6px}
+.section-sub{color:var(--muted);margin-bottom:18px}
+
+
+
+/* Road / nodes */
+.road-wrap{position:relative;padding:28px 0 64px}
+.road-svg{display:block;width:100%;height:260px}
+
+/* nodes container is full width and positioned absolute over SVG */
+.nodes{position:absolute;left:0;right:0;top:0;height:100%;pointer-events:none}
+
+/* each node: absolute positioned (left uses inline style on element) */
+.node{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);       /* center vertically relevant to svg */
+  pointer-events:auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:140px;
+  margin-left:-70px; /* half width -> center on left coordinate */
+}
+
+/* node image (circle) */
+.node-img{
+  width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid rgba(47,123,255,0.38);
+  transition:transform .18s ease, box-shadow .18s ease;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  display:block;
+}
+
+/* scale up on hover */
+.node:hover .node-img{
+  transform:scale(1.18);
+  box-shadow:0 10px 30px rgba(47,123,255,0.22);
+}
+
+/* card appears below node, fade-in */
+.card{
+  width:280px;
+  background:linear-gradient(180deg, rgba(18,22,26,0.96), rgba(18,22,26,0.94));
+  border-radius:10px;
+  padding:12px;
+  margin-top:12px;
+  color:var(--text);
+  border:1px solid rgba(255,255,255,0.03);
+  box-shadow:0 14px 40px rgba(1,6,20,0.6);
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .22s ease, transform .22s ease;
+  pointer-events:none;
+  font-size:13px;
+  text-align:left;
+}
+
+/* show card on hover (fade-in) */
+.node:hover .card{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+
+#career-path {
+  position: relative;
+  height: 300px;
+  margin-top: 2rem;
+}
+
+.road-svg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.node-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid rgba(47, 123, 255, 0.6);
+  background: #0b0f14;
+  object-fit: cover;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.node:hover .node-img {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px rgba(47, 123, 255, 0.6);
+}
+
+.card {
+  width: 260px;
+  background: rgba(20, 25, 35, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.node:hover .card {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+/* muted small text */
+.muted{color:var(--muted);font-size:13px;margin-top:6px}
+
+/* PROJECTS */
+.project{margin-bottom:28px}
+.project h3{margin:0 0 6px;color:var(--accent)}
+.project-desc{color:var(--muted);margin-bottom:12px}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+/*.thumb{overflow:hidden;border-radius:10px}*/
+/*.thumb{position: relative;overflow: visible;}
+.thumb:hover{z-index: 20;}
+.thumb img{width:100%;height:220px;object-fit:cover;display:block;transition:transform .35s ease, box-shadow .35s ease}
+.thumb:hover img{transform:scale(1.25);box-shadow:0 18px 50px rgba(2,6,23,0.7);}*/
+
+.thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.thumb img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+/* Zoom and show overlay */
+.thumb:hover img {
+  transform: scale(1.1);
+}
+
+.caption-long {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  color: #eaf0ff;
+  padding: 18px 20px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  overflow-y: auto;
+  line-height: 1.45;
+}
+
+.caption-long h4 {
+  margin-top: 0;
+  color: #2f7bff;
+  font-size: 16px;
+}
+
+.thumb:hover .caption-long {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* CONTACT */
+.contact{text-align:center}
+.link{color:var(--accent);text-decoration:none}
+
+/* Footer */
+.footer{padding:24px 0;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted);text-align:center}
+
+/* Responsive */
+@media (max-width:900px){
+  .nav-inner{padding:12px}
+  .hero-inner{flex-direction:column;align-items:center;text-align:center}  
+  .nodes{top:10%;height:100%}
+  .node{width:120px;margin-left:-60px}
+  .card{width:220px}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:560px){
+  .gallery{grid-template-columns:repeat(1,1fr)}
+  .node{display:none} /* hide nodes on very small screens to avoid overlap; you can show vertical timeline instead */
+}
+
+.photo-wrap {
+  width: 300px;              /* your desired display size */
+  aspect-ratio: 1 / 1;       /* keeps it perfectly square */
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.05);
+  background: #0f151b;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* fill box, keep proportions */
+  image-rendering: auto;      /* use smooth high-quality downscaling */
+  transform: none;   
+}
+
+
+@media (max-width: 700px) {
+  .photo-wrap {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* --- NAV ALWAYS VISIBLE FIX --- */
+html, body {
+  height: auto !important;
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+}
+
+header, main, .hero, .container {
+  overflow: visible !important;
+  transform: none !important;
+  will-change: auto !important;
+  filter: none !important;
+  perspective: none !important;
+}
+
+.nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+  transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: none !important;
+}
+
+
+/* FORCE NAV ALWAYS ON TOP — add to bottom of style.css */
+/*
+.nav{
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 2147483647 !important; /* highest practical z-index */
+  /*
+  transition: none !important;
+  pointer-events: auto !important;
+  will-change: auto !important;
+}
